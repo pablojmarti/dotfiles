@@ -10,6 +10,8 @@ alias gcl="git clone"
 alias gaa="git add ."
 alias ga="git add"
 alias gd="git diff"
+alias b="bundle exec"
+alias fucking="sudo"
 
 
 
