@@ -28,6 +28,7 @@ Plugin 'tpope/vim-fugitive'               " git commands
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'Valloric/YouCompleteMe'
 
 "
 " work around for booting up ruby files faster
