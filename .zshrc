@@ -7,6 +7,7 @@
 alias gs="git status"
 alias gcm="git commit -m"
 alias gcl="git clone"
+alias gfp="git fetch && git pull"
 alias gaa="git add ."
 alias ga="git add"
 alias gd="git diff"

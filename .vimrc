@@ -21,13 +21,13 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-rails.git'              " rails powerup
 Plugin 'Lokaltog/vim-easymotion'          " Vim Jumping Motions
 Plugin 'altercation/vim-colors-solarized' " Solarized Colors
-" Plugin 'scrooloose/syntastic.git'
+Plugin 'scrooloose/syntastic.git'
 Plugin 'kien/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-fugitive'               " git commands
 Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'pearofducks/ansible-vim'
 
 "
 " work around for booting up ruby files faster
@@ -80,3 +80,4 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 
+set mouse+=a
