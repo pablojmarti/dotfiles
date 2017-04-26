@@ -13,6 +13,7 @@ alias ga="git add"
 alias gd="git diff"
 alias b="bundle exec"
 alias fucking="sudo"
+alias ok="clear"
 
 
 
