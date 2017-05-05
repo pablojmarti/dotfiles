@@ -80,5 +80,7 @@ set backspace=indent,eol,start                " Nice Backspaceing
 set encoding=utf-8
 set fileencoding=utf-8
 
+let g:ctrlp_show_hidden = 1
+
 
 set mouse+=a
