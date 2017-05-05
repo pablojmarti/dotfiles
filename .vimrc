@@ -29,6 +29,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-surround'
 
 "
 " work around for booting up ruby files faster
