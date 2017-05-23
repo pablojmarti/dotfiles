@@ -50,6 +50,7 @@ set t_Co=256
 if $ITERM_PROFILE=="inside"
 	colorscheme gruvbox
 elseif $ITERM_PROFILE=="outside"
+  set background=light
 	colorscheme PaperColor 
 endif
 
