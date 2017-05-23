@@ -30,6 +30,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
+Plugin 'mileszs/ack.vim'
 
 "
 " work around for booting up ruby files faster
