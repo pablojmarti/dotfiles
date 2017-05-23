@@ -48,6 +48,7 @@ colorscheme gruvbox
 set t_Co=256
 
 if $ITERM_PROFILE=="inside"
+  set background=dark
 	colorscheme gruvbox
 elseif $ITERM_PROFILE=="outside"
   set background=light
