@@ -16,6 +16,11 @@ alias fucking="sudo"
 alias ok="clear"
 
 
+im() { 
+    echo -e "\033]50;SetProfile=$1\a" 
+    export ITERM_PROFILE=$1
+}
+
 
 
 

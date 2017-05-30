@@ -31,6 +31,8 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
+Plugin 'joonty/vdebug'
+
 
 "
 " work around for booting up ruby files faster
@@ -86,6 +88,6 @@ set fileencoding=utf-8
 
 let g:ctrlp_show_hidden = 1
 let NERDTreeShowHidden = 1
-
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 set mouse+=a
