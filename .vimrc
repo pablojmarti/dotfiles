@@ -51,10 +51,10 @@ set t_Co=256
 
 if $ITERM_PROFILE=="inside"
   set background=dark
-	colorscheme gruvbox
+  colorscheme gruvbox
 elseif $ITERM_PROFILE=="outside"
   set background=light
-	colorscheme PaperColor 
+  colorscheme PaperColor 
 endif
 
 "
@@ -91,3 +91,16 @@ let NERDTreeShowHidden = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 set mouse+=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+else
+  set ttymouse=xterm2
+endif
+
+
+let g:vdebug_options = {}
+let g:vdebug_options["port"] = 9000
+let g:vdebug_options["path_maps"] = {
+      \"/srv/anchorid": "/Users/pablo/Documents/workspace/EMN/anchorid/anchorid-core"
+      \}
+
