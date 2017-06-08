@@ -97,6 +97,8 @@ else
   set ttymouse=xterm2
 endif
 
+set hlsearch
+
 
 let g:vdebug_options = {}
 let g:vdebug_options["port"] = 9000
