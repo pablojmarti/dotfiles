@@ -32,6 +32,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim'
 Plugin 'joonty/vdebug'
+Plugin 'chriskempson/base16-vim'
+
 
 
 "
@@ -46,7 +48,8 @@ let g:ruby_path = system('rbenv prefix')
 "
 syntax on
 set background=dark
-colorscheme gruvbox
+colorscheme base16-default-dark
+let base16colorspace=256  " Access colors present in 256 colorspace
 set t_Co=256
 
 if $ITERM_PROFILE=="inside"

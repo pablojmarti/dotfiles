@@ -16,13 +16,6 @@ alias fucking="sudo"
 alias ok="clear"
 
 
-im() { 
-    echo -e "\033]50;SetProfile=$1\a" 
-    export ITERM_PROFILE=$1
-}
-
-
-
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/Documents/workspace/dotfiles/oh-my-zsh
@@ -42,25 +35,9 @@ else
 fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-# bindkey -v
+bindkey -v
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-#==========================
-# Pandoc to create word files from markdown
-#==========================
-
-alias md2word=md2word # alias the function below
-
-function md2word () {  
-    PANDOC_INSTALLED=$(pandoc --version >> /dev/null; echo $?)
-
-    if [ "0" == ${PANDOC_INSTALLED} ]; then
-        pandoc -o $2 -f markdown -t docx $1
-    else
-        echo "Pandoc is not installed. Unable to convert document."
-    fi
-} 
 
 
 im() { 
