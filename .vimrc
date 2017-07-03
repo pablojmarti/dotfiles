@@ -51,7 +51,7 @@ set t_Co=256
 
 if $ITERM_PROFILE=="inside"
   set background=dark
- colorscheme hybrid 
+ colorscheme Tomorrow-Night 
 elseif $ITERM_PROFILE=="outside"
   set background=light
   colorscheme PaperColor 
