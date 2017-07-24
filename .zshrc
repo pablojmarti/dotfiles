@@ -14,6 +14,7 @@ alias gd="git diff"
 alias b="bundle exec"
 alias fucking="sudo"
 alias ok="clear"
+alias chrome="open -a 'Google Chrome' $1"
 
 
 
@@ -35,13 +36,14 @@ else
 fi
 
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH=$PATH:/Users/pablo/Documents/workspace/personal_projects/yell-at-me/yell
 bindkey -v
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 
 im() { 
-  echo -e "\033]50;SetProfile=$1\a" 
+  echo -e "\033]50;SetProfile=$1\a"
   export ITERM_PROFILE=$1
 }
 
