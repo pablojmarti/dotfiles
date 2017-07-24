@@ -30,10 +30,10 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
-Plugin 'mileszs/ack.vim'
-Plugin 'joonty/vdebug'
+Plugin 'mileszs/ack.vim' 
+Plugin 'joonty/vdebug' 
 Plugin 'chriskempson/base16-vim'
-
+Plugin 'jiangmiao/auto-pairs'
 
 
 "
