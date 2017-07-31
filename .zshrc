@@ -15,6 +15,7 @@ alias b="bundle exec"
 alias fucking="sudo"
 alias ok="clear"
 alias chrome="open -a 'Google Chrome' $1"
+alias notify="tput bel"
 
 
 
