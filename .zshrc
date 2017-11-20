@@ -60,3 +60,17 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 alias rn='react-native'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/pablo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/pablo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# kubectl
+source <(kubectl completion zsh)

@@ -10,7 +10,7 @@ set noswapfile                          " turning off swapfiles
 "	Vundle
 " ***********************************************
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#rc() 
 Plugin 'gmarik/Vundle.vim'
 
 
@@ -21,7 +21,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-rails.git'              " rails powerup
 Plugin 'Lokaltog/vim-easymotion'          " Vim Jumping Motions
 Plugin 'altercation/vim-colors-solarized' " Solarized Colors
-Plugin 'scrooloose/syntastic.git'
+Plugin 'w0rp/ale'
+Plugin 'nathanaelkane/vim-indent-guides'  " Indent Guides
 Plugin 'kien/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-fugitive'               " git commands
@@ -34,6 +35,16 @@ Plugin 'mileszs/ack.vim'
 Plugin 'joonty/vdebug' 
 Plugin 'chriskempson/base16-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'ap/vim-css-color'
+Plugin 'christoomey/vim-tmux-navigator'
+
+
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  guibg=Grey27 ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd guibg=Grey11 ctermbg=236
 
 
 "
@@ -49,14 +60,13 @@ let g:ruby_path = system('rbenv prefix')
 syntax on
 set t_Co=256
 
-if $ITERM_PROFILE=="inside"
-  set background=dark
- colorscheme Tomorrow-Night 
-elseif $ITERM_PROFILE=="outside"
+if $ITERM_PROFILE == "outside"
   set background=light
-  colorscheme PaperColor 
+  colorscheme PaperColor
+else
+  set background=dark
+  colorscheme Tomorrow-Night-Eighties 
 endif
-
 "
 "	other
 "
