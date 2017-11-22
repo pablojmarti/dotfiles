@@ -1,5 +1,4 @@
 " use Vim settings, rather than Vi settings (much better!).
-set nocompatible                        " original vi has nothing to do with my world
 filetype off                            " no legacy filetype handling
 set relativenumber                      " turn on linenumbers
 set number
@@ -34,7 +33,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'joonty/vdebug' 
 Plugin 'chriskempson/base16-vim'
 Plugin 'jiangmiao/auto-pairs'
-
+Plugin 'dracula/vim'
 
 "
 " work around for booting up ruby files faster
@@ -48,14 +47,8 @@ let g:ruby_path = system('rbenv prefix')
 "
 syntax on
 set t_Co=256
-
-if $ITERM_PROFILE=="inside"
-  set background=dark
- colorscheme Tomorrow-Night 
-elseif $ITERM_PROFILE=="outside"
-  set background=light
-  colorscheme PaperColor 
-endif
+set background=dark
+colorscheme dracula 
 
 "
 "	other
