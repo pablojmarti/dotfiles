@@ -7,12 +7,13 @@ export ZSH=/Users/pablo/.oh-my-zsh
 alias fucking="sudo"
 alias ok="clear"
 alias chrome="open -a 'Google Chrome' $1"
+alias tmux="tmux -2"
 
 #########################
 #	ZSH THEME 	#
 #########################
 ZSH_THEME="odin"
-ZSH_CUSTOME=~/Worskpace/zsh_custom/
+ZSH_CUSTOM=~/Worskpace/zsh_custom/
 
 plugins=(
   git
