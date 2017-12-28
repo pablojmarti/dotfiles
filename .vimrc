@@ -4,7 +4,6 @@ set relativenumber                      " turn on linenumbers
 set number
 set noswapfile                          " turning off swapfiles
 
-
 " *********************************************** 
 "	Vundle
 " ***********************************************
@@ -45,7 +44,7 @@ let g:ruby_path = system('rbenv prefix')
 "
 set spelllang=en
 set spellfile=/Users/pablo/Workspace/dotfiles/spell/en.utf-8.add
-
+:nnoremap <C-n> :setlocal spell! spelllang=en_us<CR>
 
 "
 "	ColorScheme
