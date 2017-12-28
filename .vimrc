@@ -40,6 +40,11 @@ Plugin 'dracula/vim'
 "
 let g:ruby_path = system('rbenv prefix')
 
+"
+" Spelling
+"
+set spelllang=en
+set spellfile=/Users/pablo/Workspace/dotfiles/spell/en.utf-8.add
 
 
 "
