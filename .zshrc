@@ -13,6 +13,7 @@ alias chrome="open -a 'Google Chrome' $1"
 alias tmux="tmux -2"
 alias gbutt="gcloud"
 alias yq="/Users/pablo/Workspace/EMN/go/bin/yq"
+alias lol="ls"
 
 #########################
 #	ZSH THEME 	#
@@ -42,8 +43,18 @@ bindkey '^[[B' history-substring-search-down
 
 #Update Path
 PATH=$PATH:/Users/pablo/google-cloud-sdk/bin
+PATH=$PATH:/Users/pablo/bin
 
 # Add Docker Completion
 fpath=(~/.zsh/completion $fpath)
 
 eval "$(rbenv init -)"
+
+# set kube auto complete
+source <(kubectl completion zsh)
+
+alias composer=/usr/local/bin/composer.phar
+
+# use nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
