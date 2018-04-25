@@ -33,6 +33,8 @@ Plugin 'joonty/vdebug'
 Plugin 'chriskempson/base16-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'dracula/vim'
+Plugin 'fatih/vim-go'
+Plugin 'Yggdroot/indentLine'
 
 "
 " work around for booting up ruby files faster
@@ -45,6 +47,11 @@ let g:ruby_path = system('rbenv prefix')
 set spelllang=en
 set spellfile=/Users/pablo/Workspace/dotfiles/spell/en.utf-8.add
 :nnoremap <C-n> :setlocal spell! spelllang=en_us<CR>
+
+"
+" Indenting
+"
+:nnoremap <C-i> :IndentLinesToggle<CR>
 
 "
 "	ColorScheme
