@@ -14,6 +14,8 @@ alias tmux="tmux -2"
 alias gbutt="gcloud"
 alias yq="/Users/pablo/Workspace/EMN/go/bin/yq"
 alias lol="ls"
+alias kon="kubeon"
+alias koff="kubeoff"
 
 #########################
 #	ZSH THEME 	#
