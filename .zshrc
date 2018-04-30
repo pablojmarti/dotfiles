@@ -22,13 +22,13 @@ ZSH_THEME="odin"
 ZSH_CUSTOM=~/Worskpace/zsh_custom/
 
 plugins=(
-  git
-  vi-mode
-  npm
-  osx
-  zsh-syntax-highlighting
-  history-substring-search
-  command-not-found
+git
+vi-mode
+npm
+osx
+zsh-syntax-highlighting
+history-substring-search
+command-not-found
 )
 
 # source oh-my-zsh
@@ -52,6 +52,11 @@ eval "$(rbenv init -)"
 
 # set kube auto complete
 source <(kubectl completion zsh)
+
+# more kube stuff
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PROMPT='$(kube_ps1)'$PROMPT
+
 
 alias composer=/usr/local/bin/composer.phar
 
