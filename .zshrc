@@ -16,6 +16,7 @@ alias yq="/Users/pablo/Workspace/EMN/go/bin/yq"
 alias lol="ls"
 alias kon="kubeon"
 alias koff="kubeoff"
+alias kgp="kubectl get pods"
 
 #########################
 #	ZSH THEME 	#
