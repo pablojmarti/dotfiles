@@ -35,6 +35,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'dracula/vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
+Plugin 'pangloss/vim-javascript'
 
 "
 " work around for booting up ruby files faster
