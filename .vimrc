@@ -36,7 +36,7 @@ Plugin 'dracula/vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
-
+Plugin 'jelera/vim-javascript-syntax'
 "
 " work around for booting up ruby files faster
 "
