@@ -37,6 +37,11 @@ command-not-found
 # source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# had to move this alias below source of ZSH
+# in order for it to override the custom zsh 
+# git alias
+alias gts="git town sync"
+
 # source autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
