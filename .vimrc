@@ -36,7 +36,7 @@ Plugin 'dracula/vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
-
+Plugin 'jelera/vim-javascript-syntax'
 "
 " work around for booting up ruby files faster
 "
@@ -102,8 +102,11 @@ else
   set ttymouse=xterm2
 endif
 
+" Sets highlight search on
 set hlsearch
 
+" Turn off auto comment on new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 let g:vdebug_options = {}
 let g:vdebug_options["port"] = 9000
