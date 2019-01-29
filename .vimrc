@@ -29,7 +29,6 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim' 
-Plugin 'joonty/vdebug' 
 Plugin 'chriskempson/base16-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'dracula/vim'
@@ -37,6 +36,9 @@ Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'nvie/vim-flake8'
 "
 " work around for booting up ruby files faster
 "
@@ -73,6 +75,10 @@ set tabstop=2                                                    " Global Tab Wi
 set shiftwidth=2                                        " number of spaces for auto-indent
 set laststatus=2                                            " Show the statusline all the time
 set hidden                                                        " handle multiple buffers better
+set foldmethod=indent         " setup folding
+set foldlevel=99
+
+:nnoremap <space> za
 
 filetype plugin indent on     " required
 
@@ -114,3 +120,15 @@ let g:vdebug_options["path_maps"] = {
       \"/srv/anchorid": "/Users/pablo/Documents/workspace/EMN/anchorid/anchorid-core"
       \}
 
+
+" Python settings
+" Setup PEP 8 indentation
+let python_highlight_all=1
+au BufNewFile,BufRead *.py 
+  \ set tabstop=4
+  \ softtabstop=4
+  \ shiftwidth=4
+  \ textwidth=79
+  \ expandtab
+  \ autoindent
+  \ fileformat=unix
