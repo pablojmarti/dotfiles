@@ -3,6 +3,7 @@ export ZSH=/Users/pablo/.oh-my-zsh
 
 # GO PATH
 export GOPATH=/Users/pablo/Workspace/EMN/go
+PATH=$PATH:$GOPATH/bin
 
 #########################
 #	ALIASES		#
@@ -17,6 +18,7 @@ alias lol="ls"
 alias kon="kubeon"
 alias koff="kubeoff"
 alias kgp="kubectl get pods"
+alias composer="composer.phar"
 
 #########################
 #	ZSH THEME 	#
@@ -41,6 +43,7 @@ source $ZSH/oh-my-zsh.sh
 # in order for it to override the custom zsh 
 # git alias
 alias gts="git town sync"
+alias gth="git town hack"
 
 # source autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
@@ -74,6 +77,8 @@ alias composer=/usr/local/bin/composer.phar
 # use nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 source ~/.bundler-exec.sh
 
@@ -83,3 +88,4 @@ command_not_found_handler () {
           return 127
 
 }
+eval "$(pyenv init -)"
