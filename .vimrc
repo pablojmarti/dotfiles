@@ -39,6 +39,8 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'avakhov/vim-yaml'
+
 "
 " work around for booting up ruby files faster
 "
@@ -120,6 +122,9 @@ let g:vdebug_options["path_maps"] = {
       \"/srv/anchorid": "/Users/pablo/Documents/workspace/EMN/anchorid/anchorid-core"
       \}
 
+"  Setup highlighting for 80 character limit
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 " Python settings
 " Setup PEP 8 indentation
