@@ -123,7 +123,7 @@ let g:vdebug_options["path_maps"] = {
       \}
 
 "  Setup highlighting for 80 character limit
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=DarkMagenta ctermfg=DarkGrey guibg=#592929
 match OverLength /\%81v.\+/
 
 " Python settings
