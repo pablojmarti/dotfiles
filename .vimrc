@@ -40,6 +40,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'avakhov/vim-yaml'
+Plugin 'dense-analysis/ale'
 
 "
 " work around for booting up ruby files faster
@@ -103,12 +104,9 @@ let g:ctrlp_show_hidden = 1
 let NERDTreeShowHidden = 1
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-set mouse+=a
-if has("mouse_sgr")
-  set ttymouse=sgr
-else
-  set ttymouse=xterm2
-endif
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 " Sets highlight search on
 set hlsearch
@@ -121,10 +119,6 @@ let g:vdebug_options["port"] = 9000
 let g:vdebug_options["path_maps"] = {
       \"/srv/anchorid": "/Users/pablo/Documents/workspace/EMN/anchorid/anchorid-core"
       \}
-
-"  Setup highlighting for 80 character limit
-highlight OverLength ctermbg=DarkMagenta ctermfg=DarkGrey guibg=#592929
-match OverLength /\%81v.\+/
 
 " Python settings
 " Setup PEP 8 indentation
