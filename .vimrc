@@ -11,8 +11,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
 
-
-
 "
 "	Plugins
 "
@@ -26,7 +24,6 @@ Plugin 'tpope/vim-fugitive'               " git commands
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'pearofducks/ansible-vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim' 
 Plugin 'chriskempson/base16-vim'
@@ -41,6 +38,12 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'avakhov/vim-yaml'
 Plugin 'dense-analysis/ale'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'hashivim/vim-terraform'
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'puremourning/vimspector'
 
 "
 " work around for booting up ruby files faster
@@ -131,3 +134,30 @@ au BufNewFile,BufRead *.py
   \ expandtab
   \ autoindent
   \ fileformat=unix
+
+let g:vimspector_enable_mappings='HUMAN'
+
+function! HighlightRepeats() range
+  let lineCounts = {}
+  let lineNum = a:firstline
+  while lineNum <= a:lastline
+    let lineText = getline(lineNum)
+    if lineText != ""
+      let lineCounts[lineText] = (has_key(lineCounts, lineText) ? lineCounts[lineText] : 0) + 1
+    endif
+    let lineNum = lineNum + 1
+  endwhile
+  exe 'syn clear Repeat'
+  for lineText in keys(lineCounts)
+    if lineCounts[lineText] >= 2
+      exe 'syn match Repeat "^' . escape(lineText, '".\^$*[]') . '$"'
+    endif
+  endfor
+endfunction
+
+command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
+
+" Remap Ctrl+A for tmux integration
+cnoremap <C-c> <C-a>
+
+
