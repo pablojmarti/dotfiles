@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/pablo/.oh-my-zsh"
+export ZSH="/Users/pcorde1/.oh-my-zsh"
 
 # THEME
 ZSH_THEME="minimal"
