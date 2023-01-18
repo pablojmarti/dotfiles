@@ -14,11 +14,9 @@ Plugin 'gmarik/Vundle.vim'
 "
 "	Plugins
 "
-Plugin 'tpope/vim-rails.git'              " rails powerup
 Plugin 'Lokaltog/vim-easymotion'          " Vim Jumping Motions
-Plugin 'altercation/vim-colors-solarized' " Solarized Colors
-Plugin 'scrooloose/syntastic.git'
-Plugin 'kien/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, etc finder.
+Plugin 'dense-analysis/ale'
+Plugin 'ctrlpvim/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-fugitive'               " git commands
 Plugin 'scrooloose/nerdtree'
@@ -37,7 +35,6 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'avakhov/vim-yaml'
-Plugin 'dense-analysis/ale'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
@@ -117,12 +114,6 @@ set hlsearch
 " Turn off auto comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-let g:vdebug_options = {}
-let g:vdebug_options["port"] = 9000
-let g:vdebug_options["path_maps"] = {
-      \"/srv/anchorid": "/Users/pablo/Documents/workspace/EMN/anchorid/anchorid-core"
-      \}
-
 " Python settings
 " Setup PEP 8 indentation
 let python_highlight_all=1
@@ -159,5 +150,3 @@ command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 
 " Remap Ctrl+A for tmux integration
 cnoremap <C-c> <C-a>
-
-
