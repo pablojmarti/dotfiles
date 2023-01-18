@@ -96,6 +96,14 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias jmeter="bash /Applications/apache-jmeter-5.4.3/bin/jmeter"
 
+# SSH Alias that will add 'bash -o vi' to all ssh commands via the vissh function
+# TODO: add options to fall back to sh
+vissh() {
+  ssh $1 -t bash -o vi
+}
+
+alias ssh="vissh"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh"  ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
