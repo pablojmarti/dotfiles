@@ -95,11 +95,11 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias jmeter="bash /Applications/apache-jmeter-5.4.3/bin/jmeter"
+alias pip="python3 -m pip"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh"  ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
+# NVM Update
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}"  ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #composer
 export PATH=~/.composer/vendor/bin:$PATH
@@ -150,3 +150,7 @@ export PYTHON_CONFIGURE_OPTS="--enable-framework"
 # ycm set up
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/ansible@2.9/bin:$PATH"
+
+
