@@ -20,17 +20,14 @@ Plugin 'ctrlpvim/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, et
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-fugitive'               " git commands
 Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim' 
 Plugin 'chriskempson/base16-vim'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiaoj/auto-pairs'
 Plugin 'dracula/vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'nvie/vim-flake8'
@@ -41,6 +38,8 @@ Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'hashivim/vim-terraform'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'puremourning/vimspector'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'lifepillar/vim-colortemplate'
 
 "
 " work around for booting up ruby files faster
@@ -65,7 +64,7 @@ set spellfile=/Users/pablo/Workspace/dotfiles/spell/en.utf-8.add
 syntax on
 set t_Co=256
 set background=dark
-colorscheme dracula 
+colorscheme dracula
 
 "
 "	other
