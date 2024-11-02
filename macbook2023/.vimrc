@@ -14,36 +14,29 @@ Plugin 'gmarik/Vundle.vim'
 "
 "	Plugins
 "
-Plugin 'tpope/vim-rails.git'              " rails powerup
 Plugin 'Lokaltog/vim-easymotion'          " Vim Jumping Motions
-Plugin 'altercation/vim-colors-solarized' " Solarized Colors
-Plugin 'scrooloose/syntastic.git'
-Plugin 'kien/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, etc finder.
+Plugin 'ctrlpvim/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-fugitive'               " git commands
 Plugin 'scrooloose/nerdtree'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim' 
 Plugin 'chriskempson/base16-vim'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'dracula/vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'nvie/vim-flake8'
 Plugin 'avakhov/vim-yaml'
-Plugin 'dense-analysis/ale'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mzlogin/vim-markdown-toc'
 Plugin 'hashivim/vim-terraform'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'puremourning/vimspector'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'lifepillar/vim-colortemplate'
 
 "
 " work around for booting up ruby files faster
@@ -68,7 +61,7 @@ set spellfile=/Users/pablo/Workspace/dotfiles/spell/en.utf-8.add
 syntax on
 set t_Co=256
 set background=dark
-colorscheme dracula 
+colorscheme dracula
 
 "
 "	other
@@ -117,12 +110,6 @@ set hlsearch
 " Turn off auto comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-let g:vdebug_options = {}
-let g:vdebug_options["port"] = 9000
-let g:vdebug_options["path_maps"] = {
-      \"/srv/anchorid": "/Users/pablo/Documents/workspace/EMN/anchorid/anchorid-core"
-      \}
-
 " Python settings
 " Setup PEP 8 indentation
 let python_highlight_all=1
@@ -160,4 +147,9 @@ command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 " Remap Ctrl+A for tmux integration
 cnoremap <C-c> <C-a>
 
+" Configure Copilot to ignore all files other than types included explicitly
+let g:copilot_filetypes = {
+	\ '*': v:false,
+	\ 'c': v:true,
+	\ }
 
