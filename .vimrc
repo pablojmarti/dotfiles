@@ -15,7 +15,6 @@ Plugin 'gmarik/Vundle.vim'
 "	Plugins
 "
 Plugin 'Lokaltog/vim-easymotion'          " Vim Jumping Motions
-Plugin 'dense-analysis/ale'
 Plugin 'ctrlpvim/ctrlp.vim.git'               " Fuzzy file, buffer, mru, tag, etc finder.
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'tpope/vim-fugitive'               " git commands
@@ -24,13 +23,11 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim' 
 Plugin 'chriskempson/base16-vim'
-Plugin 'jiangmiaoj/auto-pairs'
 Plugin 'dracula/vim'
 Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'nvie/vim-flake8'
 Plugin 'avakhov/vim-yaml'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -149,3 +146,10 @@ command! -range=% HighlightRepeats <line1>,<line2>call HighlightRepeats()
 
 " Remap Ctrl+A for tmux integration
 cnoremap <C-c> <C-a>
+
+" Configure Copilot to ignore all files other than types included explicitly
+let g:copilot_filetypes = {
+	\ '*': v:false,
+	\ 'c': v:true,
+	\ }
+
