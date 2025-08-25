@@ -88,11 +88,24 @@ export JAVA_HOME=/opt/homebrew/opt/openjdk
 # Core Utils
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
+# MCP Testing
+export PATH="~/.local/bin:$PATH"
+export PATH="~/.local/bin/scripts:$PATH"
+
+
 # =========================================== ALIASES ===========================================
 alias jmeter="bash /Applications/apache-jmeter-5.4.3/bin/jmeter"
 alias gfp="git fetch && git pull"
 # Removes stale local branches
 alias gdg="git branch -vv | grep '\[origin/.*: gone]' | awk '{print $1}' | xargs git branch -d"
+
+alias vim="nvim"
+
+alias nv="nvim"
+
+alias py="python3"
+
+alias so="source ~/.zshrc"
 
 # SSH Alias that will add 'bash -o vi' to all ssh commands via the vissh function
 # TODO: add options to fall back to sh
@@ -151,3 +164,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - zsh)"
 
 # Restart your shell for the changes to take effect.
+
+. "$HOME/.local/bin/env"

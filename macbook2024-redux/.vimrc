@@ -168,3 +168,6 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+" YCM config
+let g:ycm_autoclose_preview_window_after_completion = 1
