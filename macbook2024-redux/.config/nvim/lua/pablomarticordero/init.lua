@@ -1,6 +1,5 @@
 require("pablomarticordero.set")
 require("pablomarticordero.remap")
-require("pablomarticordero.packer")
 require("pablomarticordero.lsp")
 
 local augroup = vim.api.nvim_create_augroup
