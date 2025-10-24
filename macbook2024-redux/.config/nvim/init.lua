@@ -1,6 +1,8 @@
 require("config.lazy")
 require("pablomarticordero")
-require("overseer").setup()
+require("overseer").setup({
+  templates = { "builtin", "user.c_build" },
+})
 
 vim.lsp.enable('luals')
 vim.lsp.enable('clangd')
