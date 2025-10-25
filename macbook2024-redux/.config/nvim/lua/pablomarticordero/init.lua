@@ -29,3 +29,17 @@ autocmd('LspAttach', {
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
   end
 })
+
+-- Automatically build on file save
+vim.api.nvim_create_user_command("WatchDepression", function()
+  local overseer = require("overseer")
+  overseer.run_template({ name = "build depression" }, function(task)
+    if task then
+      task:add_component({ "restart_on_save", paths = {vim.fn.expand("%:h")} })
+      local main_win = vim.api.nvim_get_current_win()
+      vim.api.nvim_set_current_win(main_win)
+    else
+      vim.notify("WatchRun not supported for filetype " .. vim.bo.filetype, vim.log.levels.ERROR)
+    end
+  end)
+end, {})
