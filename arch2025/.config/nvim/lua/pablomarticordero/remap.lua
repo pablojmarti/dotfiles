@@ -45,3 +45,16 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
+
+vim.keymap.set("n", "<leader>wd", function()
+  vim.cmd("WatchDepression")
+end)
+
+vim.keymap.set("n", "<leader>rd", function()
+  local overseer = require("overseer")
+  overseer.run_template({ name = "run depression" }, function(task)
+    if not task then
+      vim.notify("Error on running depression ")
+    end
+  end)
+end)
