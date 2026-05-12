@@ -70,6 +70,8 @@ alias py="python3"
 
 alias so="source ~/.zshrc"
 
+alias copy="xclip -selection clipboard"
+
 # SSH Alias that will add 'bash -o vi' to all ssh commands via the vissh function
 # TODO: add options to fall back to sh
 vissh() {
