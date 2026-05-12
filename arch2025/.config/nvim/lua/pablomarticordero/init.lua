@@ -33,7 +33,7 @@ autocmd('LspAttach', {
 -- Automatically build on file save
 vim.api.nvim_create_user_command("WatchDepression", function()
   local overseer = require("overseer")
-  overseer.run_template({ name = "build depression" }, function(task)
+  overseer.run_task({ name = "build depression" }, function(task)
     if task then
       task:add_component({ "restart_on_save", paths = {vim.fn.expand("%:h")} })
       local main_win = vim.api.nvim_get_current_win()

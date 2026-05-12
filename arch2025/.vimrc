@@ -24,7 +24,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'mileszs/ack.vim' 
 Plugin 'chriskempson/base16-vim'
 Plugin 'dracula/vim'
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
@@ -37,6 +37,7 @@ Plugin 'ycm-core/YouCompleteMe'
 Plugin 'puremourning/vimspector'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'lifepillar/vim-colortemplate'
+Plugin 'vimwiki/vimwiki'
 
 "
 " work around for booting up ruby files faster
@@ -153,3 +154,20 @@ let g:copilot_filetypes = {
 	\ 'c': v:true,
 	\ }
 
+" Terraform Configuration
+let g:terraform_fmt_on_save = 1
+
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+" YCM config
+let g:ycm_autoclose_preview_window_after_completion = 1
