@@ -19,8 +19,8 @@ local clangd_capabilities = vim.tbl_deep_extend(
   }
 )
 
--- clangd setup
-require('lspconfig').clangd.setup({
+-- clangd setup (nvim 0.11+ API)
+vim.lsp.config('clangd', {
   capabilities = vim.tbl_deep_extend(
     "force",
     clangd_capabilities,
@@ -45,12 +45,9 @@ require('lspconfig').clangd.setup({
   filetypes = { 'c', 'cpp', 'cxx', 'h', 'hpp', 'hxx', 'objc', 'objcpp' },
 
   -- Root markers (priority order)
-  root_dir = require('lspconfig').util.root_pattern(
-    'compile_commands.json',
-    'configure.ac',
-    'Makefile',
-    'CMakeLists.txt',
-    '.git'
+  root_dir = vim.fs.root(
+    0,
+    { 'compile_commands.json', 'configure.ac', 'Makefile', 'CMakeLists.txt', '.git' }
   ),
 
   -- Inlay hints for C (types, parameter names)
@@ -74,9 +71,10 @@ require('lspconfig').clangd.setup({
   },
 
   -- Environment for clangd to find system headers
-  env = {
-    -- Ensure clangd finds your SDK/headers
-    MACOSX_DEPLOYMENT_TARGET = vim.env.MACOSX_DEPLOYMENT_TARGET or '10.9',
+  settings = {
+    clangd = {
+      MACOSX_DEPLOYMENT_TARGET = vim.env.MACOSX_DEPLOYMENT_TARGET or '10.9',
+    },
   },
 })
 
