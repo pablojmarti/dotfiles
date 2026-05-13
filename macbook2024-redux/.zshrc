@@ -107,6 +107,8 @@ alias py="python3"
 
 alias so="source ~/.zshrc"
 
+alias claude="source ~/.env && claude"
+
 # SSH Alias that will add 'bash -o vi' to all ssh commands via the vissh function
 # TODO: add options to fall back to sh
 vissh() {

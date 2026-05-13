@@ -45,6 +45,12 @@ return {
   { "L3MON4D3/LuaSnip" },
   { "stevearc/overseer.nvim",
     opts = {},
+  },
+  {
+    "samir-roy/code-bridge.nvim",
+    config = function()
+      require('code-bridge').setup()
+    end
   }
 
 }
