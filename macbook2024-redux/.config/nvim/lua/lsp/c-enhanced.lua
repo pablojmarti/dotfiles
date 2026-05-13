@@ -32,13 +32,11 @@ vim.lsp.config('clangd', {
     'clangd',
     '--background-index',
     '--clang-tidy',
-    '--header-insertion=ivy',
+    '--header-insertion=iwyu',
     '--header-insertion-decorators',
-    '--inlay-hints',
-    '--cross-file-includes',
-    '--index',
-    '--log=warning',
+    '--cross-file-rename',
     '--limit-results=30',
+    '--log=verbose',
   },
 
   -- Filetypes
