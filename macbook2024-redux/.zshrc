@@ -168,3 +168,4 @@ eval "$(pyenv init - zsh)"
 # Restart your shell for the changes to take effect.
 
 . "$HOME/.local/bin/env"
+export DOCKER_HOST="unix:///Users/pablo/.colima/default/docker.sock"

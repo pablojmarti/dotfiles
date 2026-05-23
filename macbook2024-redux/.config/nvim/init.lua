@@ -1,3 +1,4 @@
+require("config.darkermatrix").setup()
 require("config.lazy")
 require("pablomarticordero")
 require("overseer").setup({
