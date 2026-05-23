@@ -1,13 +1,37 @@
 return {
   {
-    "xero/miasma.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme miasma]])
-    end,
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    version = false,
+    opts = {
+      provider = "hermes",
+      auto_suggest = false,
+      allow_provider_prompt = true,
+      window = {
+        layout = "vertical",
+        width = 0.6,
+        sidebar_header = {
+          align = "center",
+          rounded = true,
+        },
+      },
+      mode = "agentic",
+      acp_providers = {
+        ["hermes"] = {
+          command = "hermes",
+          args = { "acp", "--profile", "code" },
+        }
+      }
+    },
+    dependencies = {
+      "folke/snacks.nvim", -- for input provider snacks
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "stevearc/dressing.nvim",
+      "nvim-tree/nvim-web-devicons"
+    },
   },
-
   {
     "nvim-telescope/telescope.nvim",
     version = "0.1.8",
@@ -15,7 +39,6 @@ return {
       {"nvim-lua/plenary.nvim"}
     }
   },
-
   {
 	  "nvim-treesitter/nvim-treesitter",
 	  build = ":TSUpdate"
@@ -46,5 +69,4 @@ return {
   { "stevearc/overseer.nvim",
     opts = {},
   }
-
 }
