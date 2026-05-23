@@ -1,5 +1,55 @@
 return {
   {
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    lazy = false,
+    version = false,
+    opts = {
+      mode = "agentic",
+      provider = "hermes",
+      acp_providers = {
+        ['hermes'] = {
+          command = 'hermes',
+          args = { 'acp', '--profile', 'coding' },
+        },
+      }, 
+      window = {
+        layout = 'vertical',
+        width = 0.6,
+        sidebar_header = {
+          align = 'center',
+          rounded = true,
+        },
+      },
+      auto_suggests = false,
+      allow_provider_prompt = false,
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "stevearc/dressing.nvim",
+      "folke/snacks.nvim",
+      "nvim-tree/nvim-web-devicons",
+      {
+      -- support for image pasting
+      "HakonHarnes/img-clip.nvim",
+      event = "VeryLazy",
+      opts = {
+        -- recommended settings
+        default = {
+          embed_image_as_base64 = false,
+          prompt_for_file_name = false,
+          drag_and_drop = {
+            insert_mode = true,
+          },
+          -- required for Windows users
+          use_absolute_path = true,
+        },
+      },
+    },
+    },
+  },
+  {
     "nvim-telescope/telescope.nvim",
     version = "0.1.8",
     dependencies = {
