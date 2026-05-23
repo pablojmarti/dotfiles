@@ -8,5 +8,5 @@ require("overseer").setup({
 })
 
 vim.lsp.enable('luals')
-vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
+require('lsp.c-enhanced')

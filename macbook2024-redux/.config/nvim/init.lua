@@ -1,3 +1,4 @@
+require("config.darkermatrix").setup()
 require("config.lazy")
 require("pablomarticordero")
 require("overseer").setup({
@@ -8,5 +9,5 @@ require("overseer").setup({
 })
 
 vim.lsp.enable('luals')
-vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
+require('lsp.c-enhanced')

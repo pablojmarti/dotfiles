@@ -5,6 +5,8 @@ require('mason-lspconfig').setup({
   ensure_installed = {'ts_ls', 'rust_analyzer'},
   handlers = {
     function(server_name)
+      -- Skip clangd — handled by lsp/c-enhanced.lua
+      if server_name == 'clangd' then return end
       require('lspconfig')[server_name].setup({
         capabilities = lsp_capabilities,
       })
