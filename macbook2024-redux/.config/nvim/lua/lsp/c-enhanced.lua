@@ -34,9 +34,9 @@ vim.lsp.config('clangd', {
     '--clang-tidy',
     '--header-insertion=iwyu',
     '--header-insertion-decorators',
-    '--cross-file-rename',
     '--limit-results=30',
     '--log=verbose',
+    '--cross-file-rename',
   },
 
   -- Filetypes
