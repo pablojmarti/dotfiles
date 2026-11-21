@@ -1,0 +1,9 @@
+# Keys that scripts/play-check.sh presses, one per line. Names are SDL's key names.
+#   NAME:from-to   hold the key from one frame to another (60 frames = 1 second)
+#   NAME:frame     tap the key at that frame
+#   click:x,y:frame  left click at window pixel (x,y)
+#   type:word:frame  type a word, one key every two frames
+# Add a line when a feature adds a key or a click. Examples:
+# W:60-150
+# Up:200-290
+# R:3000

@@ -1,0 +1,6 @@
+# FAIL lines of scripts/play-check.sh that the client has accepted for now.
+# One per line: a piece of the FAIL line, then " # ", then the reason.
+# A matching line is printed as ACCEPTED and does not fail the check.
+# Only the client edits this file.
+5 rectangles of 12x8 are drawn outside # the centre line is too long; older than the ball features, it gets its own fix
+(rectangle 10x10) is drawn outside # until Scoring exists, a ball that passes a paddle leaves the court and stays out

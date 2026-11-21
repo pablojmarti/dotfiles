@@ -82,12 +82,6 @@ vissh() {
   ssh -t bash -o vi $@ 
 }
 
-alias pie='command pi'
-# run pi with Vm
-alias pi='pi -e ~/.pi/gondolin-ext'
-# rebuild pi vm
-alias build-pi-vm='export GONDOLIN_GUEST_DIR=~/.pi/gondolin-image/ && npx @earendil-works/gondolin build --config ~/.pi/gondolin-ext/build-config.json --output "$GONDOLIN_GUEST_DIR" || unset GONDOLIN_GUEST_DIR'
-
 # =========================================== CUSTOM VARS ===========================================
 
 
@@ -111,15 +105,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 . "$HOME/.hermes/.env"
 
-# Pi
+# Pi: binary on PATH, then aliases/env/pi-vm-rebuild from dotfiles
 export PATH="/home/pablo/.pi/agent/bin:$PATH"
-export PI_OFFLINE=1
-export PI_TELEMTRY=0
-export PI_SKIP_VERSION_CHECK=1
-export SUPERPOWERS_DISABLE_TELEMTRY=1
-
-
-
-
-
-
+source ~/workspace/projects/dotfiles/pi/pi.zsh

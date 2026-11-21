@@ -1,0 +1,23 @@
+{
+  "enableInstallTelemetry": false,
+  "enableAnalytics": false,
+  "defaultProjectTrust": "ask",
+  "defaultThinkingLevel": "medium",
+  "sessionShareDestination": "gist",
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 16384,
+    "keepRecentTokens": 20000
+  },
+  "lastChangelogVersion": "1.5.0",
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "tuiMode": "fullscreen",
+  "extensions": [
+    "+builtin:tool-search"
+  ],
+  "packages": [
+    "git:github.com/obra/superpowers"
+  ]
+}

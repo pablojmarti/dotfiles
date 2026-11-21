@@ -115,6 +115,9 @@ vissh() {
   ssh -t bash -o vi $@ 
 }
 
+# pi (aliases, env, pi-vm-rebuild)
+source ~/workspace/projects/dotfiles/pi/pi.zsh
+
 # =========================================== CUSTOM VARS ===========================================
 export obsidian_path=/Users/pablo/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Pablo\ Javier\'s\ Locker
 

@@ -1,3 +1,5 @@
 oh-my-zsh/
 packer_compiled.lua
 .DS_Store
+pi/gondolin-ext/node_modules/
+**/build-config.local.json

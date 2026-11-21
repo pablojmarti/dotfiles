@@ -1,0 +1,9 @@
+{  "providers": {
+    "acme": {
+      "baseUrl": "https://yaya.0x69736c61.cc/v1",
+      "api": "openai-completions",
+      "apiKey": "REPLACE_ME",
+      "models": [{ "id": "Qwen3.6-35B-A3B-4bit", "contextWindow": 131072 }]
+    }
+  }
+}
