@@ -11,7 +11,7 @@ If git is not installed, stop and tell me: /review needs git.
 
 1. Read git status, git diff, every new untracked file, docs/NEXT.md, the feature's entry in docs/FEATURES.md, its plan in docs/plans/ if it has one, and the newest walkthrough. Only features that came from /plan have a plan; a missing plan is not a finding.
 2. Run the build, the full test suite and the Sanitize command from AGENTS.md. Quote both summary lines. A sanitizer report is a Must fix; quote its SUMMARY line.
-3. If scripts/check-refs.sh exists, run it on the newest walkthrough and on every doc the change touched.
+3. If scripts/check-refs.sh exists, run it on the newest walkthrough and on every doc the change touched. If scripts/check-docs.sh exists, run `sh scripts/check-docs.sh` and quote every FAIL and WARN line and its last line. Every FAIL is a Must fix: a finished feature belongs in docs/DONE.md as one line, not in docs/FEATURES.md, and docs/NEXT.md is rewritten, not added to.
 4. Check each item in "Done means" in AGENTS.md: pass or fail, with the evidence.
 5. Read every changed line. Look for:
    - Does it do what the feature says, and nothing more?

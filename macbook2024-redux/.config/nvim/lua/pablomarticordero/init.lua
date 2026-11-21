@@ -13,6 +13,13 @@ autocmd('FileType', {
   command ="setlocal formatoptions-=c formatoptions-=r formatoptions-=o"
 })
 
+--- Enable word wrapping for markdown only (overrides global wrap = false)
+autocmd('FileType', {
+  group = pmcGroup,
+  pattern = { 'markdown', 'md' },
+  command = 'setlocal wrap linebreak',
+})
+
 autocmd('LspAttach', {
   group = pmcGroup,
   callback = function(e)
@@ -43,3 +50,10 @@ vim.api.nvim_create_user_command("WatchDepression", function()
     end
   end)
 end, {})
+
+
+-- Markdown config
+require('render-markdown').setup({
+    render_modes = { 'n', 'c', 't' },
+    heading = { bold = true },
+})

@@ -6,7 +6,7 @@ Read docs/PROJECT.md, docs/FEATURES.md, docs/NEXT.md, the last five walkthroughs
 1. Did recent features take longer, or touch more files, than their size suggests?
 2. Has the same kind of bug come back?
 3. Does the next feature fit the current structure, or fight it?
-4. Is any code untested? Does any doc say something the code does not do, or do docs/NEXT.md, docs/FEATURES.md and the scope in docs/PROJECT.md disagree?
+4. Is any code untested? Does any doc say something the code does not do, or do docs/NEXT.md, docs/FEATURES.md and the scope in docs/PROJECT.md disagree? Run `sh scripts/check-docs.sh` and quote its FAIL lines and its last line. Finished features are listed in docs/DONE.md.
 5. Is the MVP still the right MVP?
 
 Give one verdict, with reasons:

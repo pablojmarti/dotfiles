@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/pablo/.oh-my-zsh"
+export EDITOR=nvim
 
 # THEME
 ZSH_THEME="jonathan"
@@ -118,6 +119,10 @@ vissh() {
 # pi (aliases, env, pi-vm-rebuild)
 source ~/workspace/projects/dotfiles/pi/pi.zsh
 
+# claude
+# ~/.zshrc
+personal-claude() { CLAUDE_CONFIG_DIR="$HOME/.personal-claude" claude "$@"; }
+
 # =========================================== CUSTOM VARS ===========================================
 export obsidian_path=/Users/pablo/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Pablo\ Javier\'s\ Locker
 
@@ -172,3 +177,6 @@ eval "$(pyenv init - zsh)"
 
 . "$HOME/.local/bin/env"
 export DOCKER_HOST="unix:///Users/pablo/.colima/default/docker.sock"
+
+export NANOCODER_NO_UPDATE_CHECK=1
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
