@@ -107,4 +107,4 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Pi: binary on PATH, then aliases/env/pi-vm-rebuild from dotfiles
 export PATH="/home/pablo/.pi/agent/bin:$PATH"
-source ~/workspace/projects/dotfiles/pi/pi.zsh
+source ~/workspace/dotfiles/pi/pi.zsh
