@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/pablo/.oh-my-zsh"
 
+# ENV VARS
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+
 # THEME
 ZSH_THEME="jonathan"
 
@@ -78,6 +82,12 @@ vissh() {
   ssh -t bash -o vi $@ 
 }
 
+alias pie='command pi'
+# run pi with Vm
+alias pi='pi -e ~/.pi/gondolin-ext'
+# rebuild pi vm
+alias build-pi-vm='export GONDOLIN_GUEST_DIR=~/.pi/gondolin-image/ && npx @earendil-works/gondolin build --config ~/.pi/gondolin-ext/build-config.json --output "$GONDOLIN_GUEST_DIR" || unset GONDOLIN_GUEST_DIR'
+
 # =========================================== CUSTOM VARS ===========================================
 
 
@@ -100,3 +110,16 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.local/bin:$PATH"
 
 . "$HOME/.hermes/.env"
+
+# Pi
+export PATH="/home/pablo/.pi/agent/bin:$PATH"
+export PI_OFFLINE=1
+export PI_TELEMTRY=0
+export PI_SKIP_VERSION_CHECK=1
+export SUPERPOWERS_DISABLE_TELEMTRY=1
+
+
+
+
+
+

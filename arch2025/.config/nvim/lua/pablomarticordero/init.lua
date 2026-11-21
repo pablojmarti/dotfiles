@@ -3,6 +3,7 @@ require("pablomarticordero.remap")
 require("pablomarticordero.lsp")
 
 local augroup = vim.api.nvim_create_augroup
+--- Pablo Marti Cordero Group
 local pmcGroup = augroup('pmcGroup', {})
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -12,6 +13,14 @@ autocmd('FileType', {
   pattern = "*",
   command ="setlocal formatoptions-=c formatoptions-=r formatoptions-=o"
 })
+
+--- Enable word wrapping for markdown only 
+autocmd('FileType', {
+  group = pmcGroup,
+  pattern = { 'markdown', 'md' },
+  command = 'setlocal wrap linebreak wrapmargin=30',
+})
+
 
 autocmd('LspAttach', {
   group = pmcGroup,

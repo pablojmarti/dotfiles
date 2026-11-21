@@ -1,33 +1,27 @@
 return {
-  {
-    'gisketch/triforce.nvim',
-    dependencies = { 'nvzone/volt' },
-    opts = {},
+  { 
+    "HiPhish/rainbow-delimiters.nvim"
   },
   {
-    "quentingruber/pomodoro.nvim",
-    lazy = false, -- needed so the pomodoro can start at launch
-    opts = {
-      start_at_launch = true,
-      work_duration = 25,
-      break_duration = 5,
-      delay_duration = 1, -- The additionnal work time you get when you delay a break
-      long_break_duration = 15,
-      breaks_before_long = 4,
-      display_ui_on_break = true, -- Disable it if you only want to see the lualine
-    },
+    "oskarnurm/koda.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- require("koda").setup({ transparent = true })
+      vim.cmd("colorscheme koda-moss")
+    end,
   },
   {
     "axsaucedo/neovim-power-mode",
     config = function()
       require("power-mode").setup({
         particles = { preset = "disintegrate" },
-        shake = { mode = "scroll" },
+        shake = { mode = "none" },
         combo = {
-          position = "top-left",
+          position = "bottom-right",
         },
         fire_wall = {
-          enabled = false,         -- true | false
+          enabled = true,         -- true | false
           bottom_offset = 2,       -- rows to skip at bottom (statusline/cmdline)
           max_rows = 5,            -- maximum fire height in rows
         },
@@ -67,7 +61,7 @@ return {
     "sphamba/smear-cursor.nvim",
     opts = {},
   },
-  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  {'akinsho/toggleterm.nvim', version = "*", config = true },
   {
     "nvim-lualine/lualine.nvim",
     optional = true,
@@ -120,45 +114,6 @@ return {
     dependencies = { {'nvim-tree/nvim-web-devicons'}}
   },
   {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    version = false,
-    opts = {
-      provider = "hermes",
-      auto_suggest = false,
-      allow_provider_prompt = true,
-      auto_apply_diff_after_generation = false,
-      auto_approve_tool_permissions = false,
-
-      window = {
-        position = "smart",
-        layout = "vertical",
-        width = 60,
-        height = 60,
-        sidebar_header = {
-          align = "center",
-          rounded = true,
-          include_model = true,
-        },
-      },
-      mode = "agentic",
-      acp_providers = {
-        ["hermes"] = {
-          command = "hermes",
-          args = { "acp", "--profile", "code" },
-        }
-      }
-    },
-    dependencies = {
-      "folke/snacks.nvim", -- for input provider snacks
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "stevearc/dressing.nvim",
-      "nvim-tree/nvim-web-devicons"
-    },
-  },
-  {
     "nvim-telescope/telescope.nvim",
     version = "0.1.8",
     dependencies = {
@@ -166,10 +121,11 @@ return {
     }
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate"
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+    lazy = false,
+    build = ':TSUpdate',
   },
-
   { "nvim-lua/plenary.nvim", lazy = true },
 
   {

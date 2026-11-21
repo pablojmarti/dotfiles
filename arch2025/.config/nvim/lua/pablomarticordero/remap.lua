@@ -1,4 +1,23 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- Open Toggle Term
+vim.keymap.set("n", "<leader>t", ":ToggleTerm<cr>");
+vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<cr>");
+vim.keymap.set("n", "<leader>tv", ":ToggleTerm size=40 direction=vertical<cr>");
+vim.keymap.set("n", "<leader>tt", ":ToggleTerm direction=tab<cr>");
+
+-- Open file selector via telescope
+vim.keymap.set("n", "<leader>pv", ":Telescope find_files<cr>")
+
+-- Open file selector, limited to only git files, via telescope
+vim.keymap.set("n", "<leader>pf", ":Telescope git_files<cr>")
+
+-- Toggle file tree, focusing the tree but not replacing the tree with the new file
+vim.keymap.set("n", "<C-n>", 
+function()
+  require("nvim-tree.api").tree.toggle({
+    current_window = false,
+    focus = true,
+  })
+end)
 
 --- Move selected visual text up or down a line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
