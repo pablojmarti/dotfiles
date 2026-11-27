@@ -17,6 +17,8 @@
       "npm",
       "uv",
       "python3",
+      "py3-pytest",
+      "tzdata",
       "openssh",
       "git",
       "build-base",

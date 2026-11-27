@@ -10,15 +10,15 @@ ZSH_THEME="jonathan"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# Plugins are loaded in order
+# Plugins are loaded in order (zsh-syntax-highlighting must stay last)
 plugins=(
   git
   vi-mode
   macos
   history-substring-search
-  zsh-syntax-highlighting
   zlong_alert
   zinsults
+  zsh-syntax-highlighting
 )
 
 # Automatically updates Oh My ZSH
@@ -29,9 +29,6 @@ zstyle ':omz:update' frequency 7
 
 # automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
-
-# use vim commands in cli
-set editing-mode vi
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -60,45 +57,26 @@ HIST_STAMPS="yyyy-mm-dd"
 source $ZSH/oh-my-zsh.sh
 
 # =========================================== PATHS ===========================================
-# export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-#composer
-export PATH=~/.composer/vendor/bin:$PATH
-
-
-# pyenv setup 
+# pyenv setup
 export PYTHON_CONFIGURE_OPTS="--enable-framework"
-
-
-# Ansible 2.9 Support
-export PATH="/opt/homebrew/opt/ansible@2.9/bin:$PATH"
-
-# ECR
-export PATH="/usr/local/bin/docker-credential-ecr-login:$PATH"
-export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
 
 # Tfswitch
 export PATH="/Users/pablo/bin:$PATH"
 
 # JAVA CONFIG
-export PATH="/opt/homebrew/opt/bison/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export JAVA_HOME=/opt/homebrew/opt/openjdk
 
-# Core Utils
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-
 # MCP Testing
-export PATH="~/.local/bin:$PATH"
-export PATH="~/.local/bin/scripts:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin/scripts:$PATH"
 
 
 # =========================================== ALIASES ===========================================
-alias jmeter="bash /Applications/apache-jmeter-5.4.3/bin/jmeter"
 alias gfp="git fetch && git pull"
 # Removes stale local branches
-alias gdg="git branch -vv | grep '\[origin/.*: gone]' | awk '{print $1}' | xargs git branch -d"
+alias gdg='git branch -vv | grep '\''\[origin/.*: gone]'\'' | awk '\''{print $1}'\'' | xargs git branch -d'
 
 alias vim="nvim"
 
@@ -108,20 +86,18 @@ alias py="python3"
 
 alias so="source ~/.zshrc"
 
-#alias claude="source ~/.env && claude"
-
 # SSH Alias that will add 'bash -o vi' to all ssh commands via the vissh function
 # TODO: add options to fall back to sh
 vissh() {
-  ssh -t bash -o vi $@ 
+  ssh -t bash -o vi $@
 }
 
 # pi (aliases, env, pi-vm-rebuild)
 source ~/workspace/projects/dotfiles/pi/pi.zsh
 
 # claude
-# ~/.zshrc
 personal-claude() { CLAUDE_CONFIG_DIR="$HOME/.personal-claude" claude "$@"; }
+claudevil() { CLAUDE_CONFIG_DIR="$HOME/.claudevil" claude "$@"; }
 
 # =========================================== CUSTOM VARS ===========================================
 export obsidian_path=/Users/pablo/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Pablo\ Javier\'s\ Locker
@@ -129,13 +105,17 @@ export obsidian_path=/Users/pablo/Library/Mobile\ Documents/iCloud\~md\~obsidian
 
 # =========================================== MISC ===========================================
 
-## kube autocomplete
-source <(kubectl completion zsh)
+## kube autocomplete (cached; regenerated when the kubectl binary is newer)
+_kc="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/kubectl_completion.zsh"
+if [[ ! -s $_kc || $commands[kubectl] -nt $_kc ]]; then
+  mkdir -p ${_kc:h} && kubectl completion zsh >| $_kc
+fi
+source $_kc; unset _kc
 
 #vi stuff
 bindkey -v
 bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down]]']]'
+bindkey '^[[B' history-substring-search-down
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -147,33 +127,22 @@ export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm (without the slow `nvm use default`)
+# default alias is "24" -> newest matching installed version
+_nvm_default=()
+[[ -r $NVM_DIR/alias/default ]] && _nvm_default=($NVM_DIR/versions/node/v$(<$NVM_DIR/alias/default)*(N/nOn))
+if (( $#_nvm_default )); then PATH="$_nvm_default[1]/bin:$PATH"; else nvm use default >/dev/null; fi
+unset _nvm_default
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#eval "$(gh copilot alias -- zsh)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/pablo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/pablo/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/pablo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/pablo/google-cloud-sdk/completion.zsh.inc'; fi
 
 alias gam="/Users/pablo/bin/gam7/gam"
 
-if [ "$(arch)" = "arm64" ]; then
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-          eval "$(/usr/local/bin/brew shellenv)"
-fi
-
 export MallocNanoZone=0
-#alias python="python3"
 
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
-
-# Restart your shell for the changes to take effect.
+eval "$(pyenv init - --no-rehash zsh)"
 
 . "$HOME/.local/bin/env"
 export DOCKER_HOST="unix:///Users/pablo/.colima/default/docker.sock"

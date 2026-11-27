@@ -1,8 +1,10 @@
 ---
 description: Break a big idea into small features that /feature can build
-argument-hint: "<idea>"
+argument-hint: "[idea]"
 ---
 Idea: $@
+
+If no idea is given above, find one in docs/FEATURES.md: list, numbered, every line under the Ideas heading and every entry elsewhere that is not in the form `- [ ] **Name** — one sentence.` (those are notes I typed in myself). Run `sh scripts/check-docs.sh` if it exists: its "not in the form" lines name them. Ask me which one to plan, and wait. A line that describes something broken (an error, a failing test, a log) is not an idea: tell me to run /bugreport with it, and do not plan it. Then go on with the one I pick as the idea.
 
 Break this idea into small features. Running /plan is asking for a plan file.
 Change no source or test files. Do not use the brainstorming or writing-plans skills; this command replaces them.
@@ -21,5 +23,5 @@ Change no source or test files. Do not use the brainstorming or writing-plans sk
    No code, no commit steps, no subagents.
    If scripts/check-refs.sh exists, you must run it on the plan file: `sh scripts/check-refs.sh <plan file>`. Fix each name it reports, or mark it (new) or UNVERIFIED. If it says TOO BIG, split that feature. Run it again until it reports no problems.
 6. Check the features together against my words: list each thing I asked for and the feature that delivers it. If something I asked for has no feature, or a feature does something I did not ask for, fix the plan first. Then show me the features in plain words, with that list and why the idea was split this way. Wait for my OK.
-7. After my OK: add the features to docs/FEATURES.md, one line each, in this form: `- [ ] **Feature N: <name>** — <one sentence>. (plan: <the plan file>)`. No file:line and no detail there: the detail stays in the plan file. Put them under one heading with the idea's name and no checkbox. Remove the idea from the Ideas section if it is there. Rewrite docs/NEXT.md to name the first one, 30 lines or fewer. Then run `sh scripts/check-docs.sh` and quote its last line. It must say OK.
+7. After my OK: add the features to docs/FEATURES.md, one line each, in this form: `- [ ] **Feature N: <name>** — <one sentence>. (plan: <the plan file>)`. No file:line and no detail there: the detail stays in the plan file. Put them under one heading with the idea's name and no checkbox. Remove the idea from the Ideas section if it is there, and remove the note I typed if the idea came from one. Rewrite docs/NEXT.md to name the first one, 30 lines or fewer. Then run `sh scripts/check-docs.sh` and quote its last line. It must say OK.
 End with the command to run next. Then stop. Do not build any feature, even the first: that is /feature, in its own session.
